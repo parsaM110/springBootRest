@@ -8,14 +8,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Repository
-@Primary
+
 public class CustomerRepository implements CustomerRepo {
     @Override
     public List<Customer> getCustomers(){
         //Todo connect to real DB
 //        return Arrays.asList(
-//                new Customer(1L, " Todo. Implement DB")
+//                new Customer(1L, " to do. Implement DB")
 //        );
         return Collections.singletonList(
                 new Customer(1L, " Todo. Implement DB")
