@@ -32,7 +32,7 @@ public class CustomerController {
         System.out.println(customer + "\u001B[0m");
     }
 
-    @DeleteMapping(path = "{customerId}")
+    @DeleteMapping(path = "{customerId}") // we can also make some more path variable by {customerId}/foo/{}
     void deleteCustomer(@PathVariable("customerId") Long id) {
 
         System.out.println("\u001B[32m" + "Delete  Request  for customer with ID " + id);
