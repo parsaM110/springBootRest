@@ -1,6 +1,7 @@
 package com.example.springbootcourse.customer;
 
 
+import com.example.springbootcourse.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +33,7 @@ public class CustomerService {
                 .stream()
                 .filter(customer -> Objects.equals(customer.getId(), id))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException( "customer with id " + id +" not found"));
+                .orElseThrow(() -> new NotFoundException( "customer with id " + id +" not found"));
     }
 
 }
