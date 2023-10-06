@@ -1,5 +1,7 @@
 package com.example.springbootcourse.customer;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 class Customer {
     private final long id;
     private final String name;
@@ -25,7 +27,7 @@ class Customer {
     public Long getCustomerId(){
         return id;
     }
-
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
