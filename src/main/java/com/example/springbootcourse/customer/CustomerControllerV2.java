@@ -1,5 +1,6 @@
 package com.example.springbootcourse.customer;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +36,7 @@ public class CustomerControllerV2 {
 
 
     @PostMapping //we map request json body into customer obj
-    void updateCustomer(@RequestBody Customer customer) {
+    void updateCustomer(@RequestBody @Valid Customer customer) {
         System.out.println("\u001B[35m" + "Post Request ...");
         System.out.println(customer + "\u001B[0m");
     }

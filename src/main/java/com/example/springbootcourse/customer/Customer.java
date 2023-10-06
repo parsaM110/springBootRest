@@ -2,10 +2,14 @@ package com.example.springbootcourse.customer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotBlank;
 
 class Customer {
     private final long id;
+    @NotBlank
     private final String name;
+
+    @NotBlank
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private final String password;
 
