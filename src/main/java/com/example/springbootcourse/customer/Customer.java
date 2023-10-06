@@ -1,6 +1,7 @@
 package com.example.springbootcourse.customer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 class Customer {
     private final long id;
@@ -15,6 +16,7 @@ class Customer {
         this.password = password;
     }
 
+    @JsonProperty("customerId")
     public Long getId() {
         return id;
     }
@@ -24,9 +26,9 @@ class Customer {
     }
 
     //customerId
-    public Long getCustomerId(){
-        return id;
-    }
+//    public Long getCustomerId(){
+//        return id;
+//    }
     @JsonIgnore
     public String getPassword() {
         return password;
