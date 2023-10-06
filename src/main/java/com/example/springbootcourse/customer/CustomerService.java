@@ -32,7 +32,7 @@ public class CustomerService {
                 .stream()
                 .filter(customer -> Objects.equals(customer.getId(), id))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException("\u001B[31m" + "customer with id " + id +" not found" + "\u001B[0m"));
+                .orElseThrow(() -> new IllegalStateException( "customer with id " + id +" not found"));
     }
 
 }
