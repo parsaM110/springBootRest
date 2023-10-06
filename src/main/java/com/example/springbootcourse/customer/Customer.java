@@ -9,12 +9,17 @@ class Customer {
         this.name = name;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     public String getName() {
         return name;
+    }
+
+    //customerId
+    public Long getCustomerId(){
+        return id;
     }
 
     @Override
