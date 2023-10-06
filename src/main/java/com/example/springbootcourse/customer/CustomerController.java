@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CustomerController {
 
+    private final CustomerService customerService = new CustomerService();
+
     @GetMapping
     Customer getCustomer(){
-        return new Customer(1L,"James Bond");
+        return customerService.getCustomer();
     }
 }
