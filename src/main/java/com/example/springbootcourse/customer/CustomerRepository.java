@@ -12,7 +12,7 @@ public class CustomerRepository implements CustomerRepo {
 //                new Customer(1L, " to do. Implement DB")
 //        );
         return Collections.singletonList(
-                new Customer(1L, " Todo. Implement DB", "todo")
+                new Customer(1L, " Todo. Implement DB", "todo", "email@gmail.com")
         );
         // no difference
     }
