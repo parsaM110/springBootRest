@@ -21,7 +21,7 @@ public class CustomerService {
 //        return new Customer(1L,"James Bond");
 //    }
 
-    List<Customer> getCustomer() {
+    List<Customer> getcustomers() {
         return customerRepo.getCustomers();
     }
 

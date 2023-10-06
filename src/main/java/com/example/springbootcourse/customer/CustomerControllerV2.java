@@ -3,10 +3,11 @@ package com.example.springbootcourse.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
+
+import java.util.Collections;
 import java.util.List;
 
-@RequestMapping(path = "api/v2/customer")
+@RequestMapping(path = "api/v2/customers")
 @RestController
 public class CustomerControllerV2 {
 
@@ -17,10 +18,25 @@ public class CustomerControllerV2 {
         this.customerService = customerService;
     }
 
-    @GetMapping(value = "all")
+  /*  @GetMapping()
     List<Customer> getCustomer() {
-        return List.of(new Customer(0L, "v2", "v2"));
+        return Collections.singletonList(new Customer(0L, "v2", "v2"));
+    }*/
+
+    @GetMapping(path = "{customerId}")
+    Customer getCustomer(@PathVariable("customerId") Long id)  {
+        return customerService.getcustomers()
+                .stream()
+                .filter(customer -> customer.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new IllegalStateException("customer not found"));
     }
+
+    @GetMapping()
+    List<Customer> getCustomers() {
+        return customerService.getcustomers();
+    }
+
 
     @PostMapping //we map request json body into customer obj
     void updateCustomer(@RequestBody Customer customer) {
