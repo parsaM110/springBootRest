@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 class Customer {
     private final long id;
     private final String name;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private final String password;
 
     public Customer(long id,
