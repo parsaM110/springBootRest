@@ -1,5 +1,6 @@
 package com.example.springbootcourse.customer;
 
+import com.example.springbootcourse.infoapp.InfoApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -21,12 +22,13 @@ public class CustomerConfiguration {
 
     @Bean
         // if you dont put this shit it wont work
-    CommandLineRunner commandLineRunner() {
+    CommandLineRunner commandLineRunner(InfoApp infoApp) {
         return args -> {
 
             System.out.println("\u001B[34m" + "Command line runner hooray" + "\u001B[0m");
             System.out.println(companyName);
-            System.out.println(environment.getProperty("info.company.name"));
+            System.out.println(environment.getProperty("info.app.version"));
+            System.out.println(infoApp);
 
 
         };
