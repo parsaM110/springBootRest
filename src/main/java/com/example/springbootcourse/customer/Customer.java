@@ -2,21 +2,27 @@ package com.example.springbootcourse.customer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
+
+@Entity
+@Table(name = "customer")
 class Customer {
-    private final long id;
+
+    @Id
+    private  long id;
     @NotBlank(message = "name must be not empty")
-    private final String name;
+    private  String name;
 
     @NotBlank(message = "password must be not empty")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private final String password;
+    private  String password;
 
     @NotBlank(message = "email must be not empty")
     @Email // this check if it is in this format : xxx@xxxx
-    private final String email;
+    private  String email;
 
 
 
@@ -27,6 +33,9 @@ class Customer {
         this.name = name;
         this.password = password;
         this.email = email;
+    }
+
+    public Customer() {
     }
 
     @JsonProperty("customerId")
