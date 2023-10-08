@@ -31,3 +31,10 @@ The following guides illustrate how to use some features concretely:
 * run `./mvnw clean` and then use `./mvnw clean install`
 
 ## using mvn directly
+
+# how to run the project 
+
+
+* run ` java -jar spring-boot-course-0.0.1-SNAPSHOT.jar`
+* for different port run `java -jar spring-boot-course-0.0.1-SNAPSHOT.jar --server.port=8083`
+* for different profile run `java -jar spring-boot-course-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev`
