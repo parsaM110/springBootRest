@@ -5,10 +5,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Entity
 @Table(name = "customer")
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 class Customer {
 
     @Id
@@ -25,18 +33,6 @@ class Customer {
     private  String email;
 
 
-
-    public Customer(long id,
-                    String name,
-                    String password, String email) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.email = email;
-    }
-
-    public Customer() {
-    }
 
     @JsonProperty("customerId")
     public Long getId() {
