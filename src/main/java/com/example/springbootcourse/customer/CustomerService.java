@@ -25,6 +25,8 @@ public class CustomerService {
 
     }
 
+
+
     List<Customer> getcustomers() {
         LOGGER.info("getcustomers was called");
         return customerRepository.findAll();
